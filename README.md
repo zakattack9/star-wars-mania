@@ -17,7 +17,7 @@ Use your knowledge of HTTP requests, and jQuery to fetch star wars film informat
  - Sanity check in browser.
 
 ## Tasks
-Make a `GET` request to each endpoint. Grab and append the respective values.
+Make a `GET` request to each endpoint. Grab and append the respective values
 requested onto the DOM. **Hint:** Test a route to see what the JSON looks like being returned from the API using Postman.
 
 #### Films
