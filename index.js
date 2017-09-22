@@ -1,46 +1,6 @@
-// sort by value
-function testSort(){
-  var items = [
-    1,3,5,6
-  ];
-
-  items.sort(function (a, b) {
-    return a.value - b.value;
-  });
+let buildHtmlElements = (title, director, episode, producer, opening_crawl, release) => {
+  let filmDiv = $('<div class="film"></div>');
+  let childrenElements = [[$('<div class="title"></div>'), title], [$('<div class="director"></div>'), director], [$('<div class="episode"></div>'), episode], [$('<div class="producer"></div>'), producer], [$('<div class="opening_crawl"></div>'), opening_crawl], [$('<div class="release"></div>'), release]];
+  childrenElements.map((currVal, index) => $('#films').append(filmDiv).append(currVal[0]).append(currVal[1]));
 }
-console.log(testSort());
-
-
-let buildHtmlElements = (responseData) => {
-
-}
-
-
-let getFilmData = (id) => {
-  //$.get("https://swapi.co/api/films/", data => data.results.map(currVal => console.log(currVal)), 'JSON');
-  $.get("https://swapi.co/api/films/", data => {
-    console.log(data.results);
-    data.results.sort((a,b) => console.log(a.episode_id - b.episode_id));
-  }, 'JSON');
-}
-$('button').click(getFilmData());
-
-
-
-
-
-/*$.ajax({
-    url:"https://swapi.co/api/films/",
-    type: "GET",
-    complete: function(response) {
-      console.log(response.responseJSON.count);
-      let jsonResults = response.responseJSON.results
-      jsonResults.map(currVal => console.log(currVal));
-      console.log(response.responseJSON.results);
-      $('#response').html(response.responseText);
-    },
-    error: function() {
-      $('#reponse').html('Bummer: there was an error!');
-    },
-});*/
-//$.get replaces code above ^
+$('button').click(function(){$.get("https://swapi.co/api/films/", data => data.results.map(currVal => buildHtmlElements(currVal.title, currVal.director, currVal.episode_id, currVal.producer, currVal.opening_crawl, currVal.release_date)), 'JSON')});
