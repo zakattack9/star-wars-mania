@@ -1,3 +1,50 @@
+body {
+	font-family: 'Geostar', cursive;
+	background: url('https://i.pinimg.com/originals/5c/03/da/5c03da8971db5da45a4d7be7a1db2c59.jpg') 0 0 / cover no-repeat fixed;
+}
+
+#all-films {
+	padding-top: 40px;
+}
+
 .film {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
+	color: #9dcce1;
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.title {
+	font-weight: bold;
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+}
+
+#logo {
+	width: 500px;
+	height: 214px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 50px;
+}
+
+button {
+	font-family: 'Libre Barcode 39 Text', cursive;
+	font-size: 50px;
+	width: 400px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	transition: 0.5s;
+}
+
+button:hover {
+	border: 10px black solid;
+	transition: 0.5s;
+	background-color: #FFE81F;
+	color: #63adcf;
+	outline: none;
 }
